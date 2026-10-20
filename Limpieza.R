@@ -16,4 +16,4 @@ head(dt)
 
 library(tidyverse)
 #Guardamos la base transformada a tsibble en un documento csv
-dt %>% write_csv("data.csv")
+write_csv(dt, "data.csv")
