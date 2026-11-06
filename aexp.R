@@ -16,7 +16,9 @@ head(precipitaciones)
 unique(precipitaciones$NombreEstacion) #Estaciones existentes
 #Se toma la estación QUEROCHACA(UTA)
 Prec_Estacion<- precipitaciones %>% fill_gaps() %>% filter(
-  NombreEstacion == 'QUEROCHACA(UTA)') %>% autoplot(Precipitación) +
+  NombreEstacion == 'QUEROCHACA(UTA)',Año>1990) 
+#Gráfica temporal de la precipitación en la estación QUEROCHACA(UTA)
+Prec_Estacion%>% autoplot(Precipitación) +
   labs(x = "Fecha", y = "Precipitación", title = 'Precipitaciones en la Estación Querochaca')
 Prec_Estacion
 
